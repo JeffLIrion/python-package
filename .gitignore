@@ -1,0 +1,13 @@
+# Python files
+*.idea
+*.pyc
+**/__pycache__/
+python_package.egg-info
+
+# Build files
+build/
+dist/
+
+# Documentation
+docs/build/
+docs/html/
