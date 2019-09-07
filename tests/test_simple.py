@@ -5,14 +5,15 @@
 
 import sys
 import unittest
+
 sys.path.insert(0, '..')
 
-import python_package
+from python_package import simple
 
 
 class TestSimple(unittest.TestCase):
     def setUp(self):
-        self.s = python_package.simple.Simple()
+        self.s = simple.Simple()
 
     def test_get_data(self):
         self.assertEqual(self.s.get_data(), 5)

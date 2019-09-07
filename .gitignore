@@ -11,3 +11,7 @@ dist/
 # Documentation
 docs/build/
 docs/html/
+
+# Coverage
+.coverage
+htmlcov/
