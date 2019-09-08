@@ -20,3 +20,11 @@ coverage:
 .PHONY: tdd
 tdd:
 	coverage run --source python_package setup.py test && coverage report -m
+
+.PHONY: lint
+lint:
+	flake8 python_package/ && pylint python_package/
+
+.PHONY: alltests
+alltests:
+	flake8 python_package/ && pylint python_package/ && coverage run --source python_package setup.py test && coverage report -m
