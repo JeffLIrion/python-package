@@ -13,7 +13,7 @@ from python_package import simple
 
 class TestSimple(unittest.TestCase):
     def setUp(self):
-        self.s = simple.Simple()
+        self.s = simple.create_simple()
 
     def test_get_data(self):
         self.assertEqual(self.s.get_data(), 5)

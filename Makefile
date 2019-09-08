@@ -15,4 +15,8 @@ test:
 
 .PHONY: coverage
 coverage:
-	coverage run --source python_package setup.py test && coverage html && coverage report
+	coverage run --source python_package setup.py test && coverage html && coverage report -m
+
+.PHONY: tdd
+tdd:
+	coverage run --source python_package setup.py test && coverage report -m
