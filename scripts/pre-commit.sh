@@ -23,9 +23,6 @@ fi
 # get the directory of this script
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-# get the package name
-PACKAGE=$($DIR/get_package_name.sh)
-
 (
   cd "$DIR/.."
 
