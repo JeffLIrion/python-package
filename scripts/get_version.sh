@@ -8,9 +8,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 RSTRIP="'*"
 LSTRIP="*'"
 
-# get the package name
-PACKAGE=$($DIR/get_package_name.sh)
-
 # get the current version
 VERSION_LINE=$(grep '__version__' "$DIR/../$PACKAGE/__init__.py" || echo '')
 VERSION_TEMP=${VERSION_LINE%"'"}
