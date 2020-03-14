@@ -1,3 +1,10 @@
+.PHONY: release
+release:
+	rm -rf dist
+	scripts/git_tag.sh
+	python setup.py sdist bdist_wheel
+	twine upload dist/*
+
 .PHONY: docs
 docs:
 	rm -rf docs/build/html
@@ -23,8 +30,8 @@ tdd:
 
 .PHONY: lint
 lint:
-	flake8 python_package/ && pylint python_package/
+	flake8 python_package/ && pylint python_package/ && flake8 tests/ && pylint tests/
 
 .PHONY: alltests
 alltests:
-	flake8 python_package/ && pylint python_package/ && coverage run --source python_package setup.py test && coverage report -m
+	flake8 python_package/ && pylint python_package/ && flake8 tests/ && pylint tests/ && coverage run --source python_package setup.py test && coverage report -m
